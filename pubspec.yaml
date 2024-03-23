@@ -1,0 +1,69 @@
+name: flutter_clean_project
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Localization
+  flutter_localizations:
+    sdk: flutter
+
+  # Routing
+  auto_route: ^7.9.2
+
+  # Utility
+  intl: any
+  flutter_screenutil: ^5.9.0
+  flutter_svg: ^2.0.10+1
+
+  # Logging
+  logger: ^2.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Linter
+  very_good_analysis: ^5.1.0
+
+  # Code Generation
+  build_runner: any
+  auto_route_generator: ^7.3.2
+
+  # Mocking
+  mocktail: ^1.0.3
+
+  # Dev Utilities
+  flutter_native_splash: ^2.4.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+
+  assets:
+    - assets/fonts/
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: FontFamily
+      fonts:
+        - asset: assets/fonts/arial.ttf
+
+
+targets:
+  $default:
+    builders:
+      auto_route_generator:auto_route_generator:
+        generate_for:
+          - lib/app/router/app_router.dart
+      auto_route_generator:auto_router_generator:
+        generate_for:
+          - lib/src/**/presentation/pages/*_page.dart

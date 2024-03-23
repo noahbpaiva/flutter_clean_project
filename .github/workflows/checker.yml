@@ -1,0 +1,39 @@
+name: Project Checker
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dart-lang/setup-dart@v1
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+
+      - run: flutter --version
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Verify formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      # If you want to run the analyzer, remove the generated files in the .gitignore file
+      # and uncomment the following lines
+      # - name: Analyze project
+      #   run: flutter analyze
+
+      - name: Run tests
+        run: flutter test
