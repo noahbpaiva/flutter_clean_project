@@ -16,7 +16,7 @@ dependencies:
     sdk: flutter
 
   # Routing
-  auto_route: ^7.9.2
+  auto_route: ^8.0.3
 
   # Utility
   intl: any
@@ -35,7 +35,7 @@ dev_dependencies:
 
   # Code Generation
   build_runner: any
-  auto_route_generator: ^7.3.2
+  auto_route_generator: ^8.0.0
 
   # Mocking
   mocktail: ^1.0.3
