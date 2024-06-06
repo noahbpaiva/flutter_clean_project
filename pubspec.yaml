@@ -34,7 +34,7 @@ dev_dependencies:
   very_good_analysis: ^5.1.0
 
   # Code Generation
-  build_runner: any
+  build_runner: 2.4.11
   auto_route_generator: ^8.0.0
 
   # Mocking
